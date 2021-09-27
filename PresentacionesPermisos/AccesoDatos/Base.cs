@@ -1,11 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AccesoDatos
 {
@@ -14,7 +9,7 @@ namespace AccesoDatos
         MySqlConnection _conn;
         public Base(string Servidor, string Usuario, string Clave, string BD)
         {
-            _conn = new MySqlConnection(string.Format("server={0}; user={1}; password={2}; database={3};", Servidor, Usuario, Clave, BD));
+            _conn = new MySqlConnection(string.Format("server={0}; user={1}; password={2}; database={3};SslMode=none", Servidor, Usuario, Clave, BD));
         }
         public string Comando(string q)
         {
@@ -37,7 +32,7 @@ namespace AccesoDatos
             DataSet ds = new DataSet();
             try
             {
-                MySqlDataAdapter da = new MySqlDataAdapter();
+                MySqlDataAdapter da = new MySqlDataAdapter(q, _conn);
                 _conn.Open();
                 da.Fill(ds, tabla);
                 _conn.Close();
@@ -48,7 +43,15 @@ namespace AccesoDatos
                 _conn.Close();
                 return ds;
             }
-            
+
+        }
+        public int Existencia(string Consulta)
+        {
+            _conn.Open();
+            var command = new MySqlCommand(Consulta, _conn);
+            var res = Convert.ToInt32(command.ExecuteScalar().ToString());
+            _conn.Close();
+            return res;
         }
 
     }

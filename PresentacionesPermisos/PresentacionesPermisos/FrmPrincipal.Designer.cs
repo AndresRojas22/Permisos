@@ -42,6 +42,7 @@ namespace PresentacionesPermisos
             this.btnRefacciones.TabIndex = 0;
             this.btnRefacciones.Text = "Refacciones";
             this.btnRefacciones.UseVisualStyleBackColor = true;
+            this.btnRefacciones.Click += new System.EventHandler(this.btnRefacciones_Click);
             // 
             // btnTaller
             // 
@@ -51,6 +52,7 @@ namespace PresentacionesPermisos
             this.btnTaller.TabIndex = 1;
             this.btnTaller.Text = "Taller";
             this.btnTaller.UseVisualStyleBackColor = true;
+            this.btnTaller.Click += new System.EventHandler(this.btnTaller_Click);
             // 
             // btnSalir
             // 
@@ -60,6 +62,7 @@ namespace PresentacionesPermisos
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmPrincipal
             // 

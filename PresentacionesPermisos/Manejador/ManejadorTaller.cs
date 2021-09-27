@@ -14,7 +14,7 @@ namespace Manejador
         Base b = new Base("localhost", "root", "", "Permisos");
         public string GuardarTaller(Taller t)
         {
-            return b.Comando(string.Format("insert into Refacciones values({0},'{1}','{2}','{3}','{4}')",
+            return b.Comando(string.Format("insert into taller values({0},'{1}','{2}','{3}','{4}')",
                 t._Codigo,t._Nombre,t._Medida,t._Marca,t._Descripcion));
         }
         public void MostrarTaller(DataGridView dtg, string dato)

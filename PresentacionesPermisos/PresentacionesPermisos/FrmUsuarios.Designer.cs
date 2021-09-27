@@ -30,12 +30,14 @@ namespace PresentacionesPermisos
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNombre = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgUsuarios = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtgPermisos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPermisos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,12 +49,13 @@ namespace PresentacionesPermisos
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
-            // btnNombre
+            // txtNombre
             // 
-            this.btnNombre.Location = new System.Drawing.Point(110, 51);
-            this.btnNombre.Name = "btnNombre";
-            this.btnNombre.Size = new System.Drawing.Size(240, 20);
-            this.btnNombre.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(110, 51);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(240, 20);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnAdd
             // 
@@ -62,14 +65,16 @@ namespace PresentacionesPermisos
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dataGridView1
+            // dtgUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 85);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(339, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.dtgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgUsuarios.Location = new System.Drawing.Point(48, 85);
+            this.dtgUsuarios.Name = "dtgUsuarios";
+            this.dtgUsuarios.Size = new System.Drawing.Size(339, 111);
+            this.dtgUsuarios.TabIndex = 3;
+            this.dtgUsuarios.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgUsuarios_CellEnter);
             // 
             // btnEliminar
             // 
@@ -79,6 +84,7 @@ namespace PresentacionesPermisos
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -88,21 +94,34 @@ namespace PresentacionesPermisos
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // dtgPermisos
+            // 
+            this.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPermisos.Location = new System.Drawing.Point(48, 204);
+            this.dtgPermisos.Name = "dtgPermisos";
+            this.dtgPermisos.Size = new System.Drawing.Size(339, 111);
+            this.dtgPermisos.TabIndex = 6;
+            this.dtgPermisos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPermisos_CellEnter);
             // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 327);
+            this.Controls.Add(this.dtgPermisos);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnNombre);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "FrmUsuarios";
             this.Text = "FrmUsuarios";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPermisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,10 +130,11 @@ namespace PresentacionesPermisos
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox btnNombre;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgUsuarios;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DataGridView dtgPermisos;
     }
 }

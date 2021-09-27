@@ -34,11 +34,11 @@ namespace PresentacionesPermisos
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtMedida = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -88,40 +88,40 @@ namespace PresentacionesPermisos
             this.label5.TabIndex = 4;
             this.label5.Text = "Descripcion";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtCodigo.Location = new System.Drawing.Point(131, 33);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(124, 20);
+            this.txtCodigo.TabIndex = 5;
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNombre.Location = new System.Drawing.Point(131, 72);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(124, 20);
+            this.txtNombre.TabIndex = 6;
             // 
-            // textBox3
+            // txtMedida
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 116);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtMedida.Location = new System.Drawing.Point(131, 116);
+            this.txtMedida.Name = "txtMedida";
+            this.txtMedida.Size = new System.Drawing.Size(124, 20);
+            this.txtMedida.TabIndex = 7;
             // 
-            // textBox4
+            // txtMarca
             // 
-            this.textBox4.Location = new System.Drawing.Point(131, 149);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(124, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtMarca.Location = new System.Drawing.Point(131, 149);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(124, 20);
+            this.txtMarca.TabIndex = 8;
             // 
-            // textBox5
+            // txtDescripcion
             // 
-            this.textBox5.Location = new System.Drawing.Point(131, 185);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 20);
-            this.textBox5.TabIndex = 9;
+            this.txtDescripcion.Location = new System.Drawing.Point(131, 185);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(124, 20);
+            this.txtDescripcion.TabIndex = 9;
             // 
             // btnAceptar
             // 
@@ -131,6 +131,7 @@ namespace PresentacionesPermisos
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -148,11 +149,11 @@ namespace PresentacionesPermisos
             this.ClientSize = new System.Drawing.Size(329, 322);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.txtMedida);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -172,11 +173,11 @@ namespace PresentacionesPermisos
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtMedida;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

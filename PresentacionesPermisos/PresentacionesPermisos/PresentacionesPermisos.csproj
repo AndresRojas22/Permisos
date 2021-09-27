@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{134FAAEF-EF93-474F-ABFF-A689492EDC15}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>PresentacionesPermisos</RootNamespace>
     <AssemblyName>PresentacionesPermisos</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,15 +32,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarUsuario.cs">
+    <Compile Include="FrmAddU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarUsuario.Designer.cs">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    <Compile Include="FrmAddU.Designer.cs">
+      <DependentUpon>FrmAddU.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAgregarRefaccion.cs">
       <SubType>Form</SubType>
@@ -84,6 +87,7 @@
     <Compile Include="FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,8 +97,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AgregarUsuario.resx">
-      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAddU.resx">
+      <DependentUpon>FrmAddU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarRefaccion.resx">
       <DependentUpon>FrmAgregarRefaccion.cs</DependentUpon>
@@ -117,6 +121,16 @@
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{8a180a40-0902-4a0a-9fa7-7f045886a72d}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejador\Manejador.csproj">
+      <Project>{d9a6c808-a0cb-4422-86a8-17acf1eb4c54}</Project>
+      <Name>Manejador</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

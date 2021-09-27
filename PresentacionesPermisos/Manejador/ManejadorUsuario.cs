@@ -11,12 +11,14 @@ namespace Manejador
 {
     public class ManejadorUsuario
     {
-        Base b = new Base("localhost","root","","Permisos");
-        public string GuardarUsuario(Usuario u)
+        Base b = new Base("localhost", "root", "", "Permisos");
+        int i;
+        public string GuardarUsuario(Usuario u, Permisos p)
         {
-            return b.Comando(string.Format("insert into usuarios values({0},'{1}','{2}','{3}','{4}','{5}','{6}')",
-                u._id,u._Nombre,u._Contrasenia,u._ApellidoP,
-                u._ApellidoM,u._F_Nacimiento,u._RFC));
+            return b.Comando(string.Format("insert into usuarios values({0},'{1}','{2}','{3}','{4}','{5}','{6}'); insert into Permisos values(null,{7},{8},{9},{10},{0})",
+                u._id, u._Nombre, u._Contrasenia, u._ApellidoP,
+                u._ApellidoM, u._F_Nacimiento, u._RFC,
+                p._Lectura, p._Escritura, p._Eliminacion, p._Actualizacion, p._Fk_id_Usuario));
         }
         public void MostrarUsuarios(DataGridView dtg, string dato)
         {
@@ -33,11 +35,34 @@ namespace Manejador
             }
             return r;
         }
-        public string ActualizarUsuarios(Usuario u)
+        public string ActualizarUsuarios(Usuario u, Permisos p)
         {
             return b.Comando(string.Format("update usuarios set id_Usuario={0}," +
                 "Nombre = '{1}',Contraseña = '{2}', ApellidoP = '{3}', ApellidoM = '{4}',F_Nacimiento ='{5}'," +
-                "RFC ='{6}'",u._id,u._Nombre,u._Contrasenia,u._ApellidoP,u._ApellidoM,u._F_Nacimiento,u._RFC));
+                "RFC ='{6}';  update permisos set Lectura = {7},Escritura = {8}, Eliminacion = {9}, Actualizacion = {10},Fk_id_usuario ={0}"
+                , u._id, u._Nombre, u._Contrasenia, u._ApellidoP, u._ApellidoM, u._F_Nacimiento, u._RFC, p._Lectura, p._Escritura, p._Eliminacion, p._Actualizacion, p._Fk_id_Usuario));
+        }
+
+        public bool ExisteUsuario(Usuario U)
+        {
+            try
+            {
+                string consulta = string.Format("Select count(*)from usuarios where id_usuario = '{0}' and contraseña = '{1}'", U._id, U._Contrasenia);
+                var Existe = b.Existencia(consulta);
+                if (Existe == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Falló la consulta" + ex.Message);
+                return false;
+            }
         }
     }
 }

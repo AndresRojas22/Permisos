@@ -46,6 +46,7 @@ namespace PresentacionesPermisos
             this.btnAceptar.TabIndex = 0;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnSalir
             // 
@@ -55,6 +56,7 @@ namespace PresentacionesPermisos
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtNombre
             // 
@@ -68,9 +70,9 @@ namespace PresentacionesPermisos
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Id";
             // 
             // label2
             // 
@@ -91,12 +93,13 @@ namespace PresentacionesPermisos
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(134, 229);
+            this.linkLabel1.Location = new System.Drawing.Point(135, 230);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(179, 13);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Aun no tienes cuenta? Crea la tuya";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // FrmLogin
             // 

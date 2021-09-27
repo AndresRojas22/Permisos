@@ -21,5 +21,9 @@ namespace Entidades
             _Marca = Marca;
             _Descripcion = Descripcion;
         }
+        public Taller()
+        {
+
+        }
     }
 }

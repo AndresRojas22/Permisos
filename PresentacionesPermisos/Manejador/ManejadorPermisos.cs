@@ -19,17 +19,14 @@ namespace Manejador
         }
         public void MostrarPermiso(DataGridView dtg, string dato)
         {
-            dtg.DataSource = b.Mostrar(string.Format("select * from Permiso where id_permiso like '%{0}%' or fk_id_usuario like '%{0}%' ", dato), "Permisos").Tables["Permisos"];
+            dtg.DataSource = b.Mostrar(string.Format("select * from Permisos where Fk_id_usuario like '%{0}%' ", dato), "Permisos").Tables["Permisos"];
             dtg.AutoResizeColumns();
         }
         public string EliminarPermiso(Permisos p)
         {
             string r = "";
-            DialogResult rs = MessageBox.Show("Está seguro que desea eliminar: " + p._Fk_id_Usuario, "Atencion!", MessageBoxButtons.YesNo);
-            if (rs == DialogResult.Yes)
-            {
                 r = b.Comando(string.Format("delete from Permisos where fk_id_usuario = {0}", p._Fk_id_Usuario));
-            }
+            
             return r;
         }
         public string ActualizarPermiso(Permisos p)

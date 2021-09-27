@@ -32,11 +32,11 @@ namespace PresentacionesPermisos
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgRefaccion = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnElimnar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgRefaccion)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,6 +54,7 @@ namespace PresentacionesPermisos
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(258, 20);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // btnAgregar
             // 
@@ -63,14 +64,16 @@ namespace PresentacionesPermisos
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // dataGridView1
+            // dtgRefaccion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(99, 112);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(356, 205);
-            this.dataGridView1.TabIndex = 3;
+            this.dtgRefaccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgRefaccion.Location = new System.Drawing.Point(99, 112);
+            this.dtgRefaccion.Name = "dtgRefaccion";
+            this.dtgRefaccion.Size = new System.Drawing.Size(356, 205);
+            this.dtgRefaccion.TabIndex = 3;
+            this.dtgRefaccion.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgRefaccion_CellEnter);
             // 
             // label2
             // 
@@ -90,6 +93,7 @@ namespace PresentacionesPermisos
             this.btnElimnar.TabIndex = 5;
             this.btnElimnar.Text = "Eliminar";
             this.btnElimnar.UseVisualStyleBackColor = true;
+            this.btnElimnar.Click += new System.EventHandler(this.btnElimnar_Click);
             // 
             // btnEditar
             // 
@@ -99,6 +103,7 @@ namespace PresentacionesPermisos
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // FrmRefacciones
             // 
@@ -108,13 +113,14 @@ namespace PresentacionesPermisos
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnElimnar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgRefaccion);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Name = "FrmRefacciones";
             this.Text = "FrmRefacciones";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmRefacciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgRefaccion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +131,7 @@ namespace PresentacionesPermisos
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgRefaccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnElimnar;
         private System.Windows.Forms.Button btnEditar;
