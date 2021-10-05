@@ -55,6 +55,8 @@ namespace PresentacionesPermisos
             this.label9 = new System.Windows.Forms.Label();
             this.cmbLectura = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cmbPerfil = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,6 +195,8 @@ namespace PresentacionesPermisos
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.cmbPerfil);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cmbActualizacion);
             this.groupBox1.Controls.Add(this.label11);
@@ -205,7 +209,7 @@ namespace PresentacionesPermisos
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(346, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 217);
+            this.groupBox1.Size = new System.Drawing.Size(298, 284);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Permisos";
@@ -213,7 +217,7 @@ namespace PresentacionesPermisos
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 197);
+            this.label12.Location = new System.Drawing.Point(6, 261);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(233, 20);
             this.label12.TabIndex = 8;
@@ -226,7 +230,7 @@ namespace PresentacionesPermisos
             this.cmbActualizacion.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cmbActualizacion.Location = new System.Drawing.Point(189, 138);
+            this.cmbActualizacion.Location = new System.Drawing.Point(187, 197);
             this.cmbActualizacion.Name = "cmbActualizacion";
             this.cmbActualizacion.Size = new System.Drawing.Size(55, 24);
             this.cmbActualizacion.TabIndex = 11;
@@ -235,7 +239,7 @@ namespace PresentacionesPermisos
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(192, 119);
+            this.label11.Location = new System.Drawing.Point(190, 178);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 16);
             this.label11.TabIndex = 6;
@@ -248,7 +252,7 @@ namespace PresentacionesPermisos
             this.cmbEliminacion.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cmbEliminacion.Location = new System.Drawing.Point(26, 138);
+            this.cmbEliminacion.Location = new System.Drawing.Point(24, 197);
             this.cmbEliminacion.Name = "cmbEliminacion";
             this.cmbEliminacion.Size = new System.Drawing.Size(55, 24);
             this.cmbEliminacion.TabIndex = 10;
@@ -257,7 +261,7 @@ namespace PresentacionesPermisos
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 119);
+            this.label10.Location = new System.Drawing.Point(21, 178);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 16);
             this.label10.TabIndex = 4;
@@ -270,7 +274,7 @@ namespace PresentacionesPermisos
             this.cmbEscritura.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cmbEscritura.Location = new System.Drawing.Point(189, 55);
+            this.cmbEscritura.Location = new System.Drawing.Point(187, 114);
             this.cmbEscritura.Name = "cmbEscritura";
             this.cmbEscritura.Size = new System.Drawing.Size(55, 24);
             this.cmbEscritura.TabIndex = 9;
@@ -279,7 +283,7 @@ namespace PresentacionesPermisos
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(192, 36);
+            this.label9.Location = new System.Drawing.Point(190, 95);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 16);
             this.label9.TabIndex = 2;
@@ -292,7 +296,7 @@ namespace PresentacionesPermisos
             this.cmbLectura.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.cmbLectura.Location = new System.Drawing.Point(26, 54);
+            this.cmbLectura.Location = new System.Drawing.Point(24, 113);
             this.cmbLectura.Name = "cmbLectura";
             this.cmbLectura.Size = new System.Drawing.Size(55, 24);
             this.cmbLectura.TabIndex = 8;
@@ -301,11 +305,35 @@ namespace PresentacionesPermisos
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(29, 35);
+            this.label8.Location = new System.Drawing.Point(27, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Lectura";
+            // 
+            // cmbPerfil
+            // 
+            this.cmbPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPerfil.FormattingEnabled = true;
+            this.cmbPerfil.Items.AddRange(new object[] {
+            "Vendedor (Refacción)",
+            "Vendedor (Taller)",
+            "Admnistrador"});
+            this.cmbPerfil.Location = new System.Drawing.Point(73, 49);
+            this.cmbPerfil.Name = "cmbPerfil";
+            this.cmbPerfil.Size = new System.Drawing.Size(121, 24);
+            this.cmbPerfil.TabIndex = 12;
+            this.cmbPerfil.SelectedValueChanged += new System.EventHandler(this.cmbPerfil_SelectedValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(104, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 16);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Perfil";
             // 
             // FrmAddU
             // 
@@ -366,5 +394,7 @@ namespace PresentacionesPermisos
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbLectura;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbPerfil;
     }
 }

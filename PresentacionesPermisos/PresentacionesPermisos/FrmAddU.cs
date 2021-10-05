@@ -8,6 +8,7 @@ namespace PresentacionesPermisos
     public partial class FrmAddU : Form
     {
         ManejadorUsuario MU;
+        public static string Usuario;
         public FrmAddU()
         {
             InitializeComponent();
@@ -32,18 +33,19 @@ namespace PresentacionesPermisos
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (FrmUsuarios.U._id==0)
-            {
-                MessageBox.Show(MU.GuardarUsuario(new Usuario(int.Parse(txtid.Text), txtNombre.Text, txtPswd.Text,
-                    txtApellidoP.Text, txtApellidoM.Text, txtNacimiento.Text, txtRFC.Text),
-                    new Permisos(int.Parse(cmbLectura.Text), int.Parse(cmbEscritura.Text), int.Parse(cmbEliminacion.Text),
-                    int.Parse(cmbActualizacion.Text), int.Parse(txtid.Text))));
-                Close();
-            }
+                if (FrmUsuarios.U._id == 0)
+                {
+                    MessageBox.Show(MU.GuardarUsuario(new Usuario(int.Parse(txtid.Text), txtNombre.Text, txtPswd.Text,
+                        txtApellidoP.Text, txtApellidoM.Text, txtNacimiento.Text, txtRFC.Text,cmbPerfil.Text),
+                        new Permisos(int.Parse(cmbLectura.Text), int.Parse(cmbEscritura.Text), int.Parse(cmbEliminacion.Text),
+                        int.Parse(cmbActualizacion.Text), int.Parse(txtid.Text))));
+                    Close();
+                }
+            
             else
             {
                 MessageBox.Show(MU.ActualizarUsuarios(new Usuario(int.Parse(txtid.Text), txtNombre.Text, txtPswd.Text,
-                    txtApellidoP.Text, txtApellidoM.Text, txtNacimiento.Text, txtRFC.Text),
+                    txtApellidoP.Text, txtApellidoM.Text, txtNacimiento.Text, txtRFC.Text,cmbPerfil.Text),
                     new Permisos(int.Parse(cmbLectura.Text), int.Parse(cmbEscritura.Text), int.Parse(cmbEliminacion.Text),
                     int.Parse(cmbActualizacion.Text), int.Parse(txtid.Text))));
                 Close();
@@ -53,6 +55,33 @@ namespace PresentacionesPermisos
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbPerfil_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cmbPerfil.Text == "Vendedor (Refacción)")
+            {
+                cmbLectura.Text = 1.ToString();
+                cmbEscritura.Text = 1.ToString();
+                cmbEliminacion.Text = 0.ToString();
+                cmbActualizacion.Text = 0.ToString();
+            }
+            if (cmbPerfil.Text == "Vendedor (Taller)")
+            {
+                cmbLectura.Text = 1.ToString();
+                cmbEscritura.Text = 1.ToString();
+                cmbEliminacion.Text = 0.ToString();
+                cmbActualizacion.Text = 0.ToString();
+
+            }
+            if (cmbPerfil.Text == "Vendedor (Taller)")
+            {
+                cmbLectura.Text = 1.ToString();
+                cmbEscritura.Text = 1.ToString();
+                cmbEliminacion.Text = 0.ToString();
+                cmbActualizacion.Text = 0.ToString();
+
+            }
         }
     }
 }

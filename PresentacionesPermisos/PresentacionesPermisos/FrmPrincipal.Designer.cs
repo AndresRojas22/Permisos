@@ -74,6 +74,7 @@ namespace PresentacionesPermisos
             this.Controls.Add(this.btnRefacciones);
             this.Name = "FrmPrincipal";
             this.Text = "FrmPrincipal";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.ResumeLayout(false);
 
         }

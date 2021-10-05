@@ -5,9 +5,15 @@ namespace PresentacionesPermisos
 {
     public partial class FrmPrincipal : Form
     {
+        string U;
         public FrmPrincipal()
         {
+            if (string.IsNullOrEmpty(FrmAddU.Usuario))
+            {
+                MessageBox.Show(U);
+            }
             InitializeComponent();
+            U = FrmLogin.Usu;
         }
 
         private void btnRefacciones_Click(object sender, EventArgs e)
@@ -42,6 +48,18 @@ namespace PresentacionesPermisos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            if (U == "Vendedor (Taller)")
+            {
+                btnRefacciones.Enabled = false;
+            }
+            if (U == "Vendedor (Refacciones)")
+            {
+                btnTaller.Enabled = false;
+            }
         }
     }
 }

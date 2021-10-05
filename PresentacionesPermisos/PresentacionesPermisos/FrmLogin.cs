@@ -9,11 +9,13 @@ namespace PresentacionesPermisos
     {
         ManejadorUsuario MC;
         Usuario U;
+        public static string Usu;
         public FrmLogin()
         {
             InitializeComponent();
             MC = new ManejadorUsuario();
             U = new Usuario();
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
